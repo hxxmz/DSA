@@ -1,6 +1,6 @@
 ## Revisiting Data Structures and Algorithms
 Repository Map <br>
-A.
+<!--
 ```
 DSA/
 │
@@ -107,35 +107,36 @@ DSA/
     ├── Tutorials/
     └── ...
 ```
-B.
+-->
 ```
 dsa/
 ├── README.md             (Instructions and overview)
-├── LICENSE               (Optional, if applicable)
-├── .gitignore            (Specify files to exclude from version control)
-├── CONTRIBUTORS.md       (Optional, list contributors)
+├── LICENSE               (Unavailable as of now)
+├── .gitignore            
+├── CONTRIBUTORS.md       (list of contributors)
 ├── languages/
-│   ├── cpp/               (Subfolder for C++ code)
+│   ├── js/               
 │   │   ├── data_structures/
-│   │   │   ├── Array.cpp
-│   │   │   ├── LinkedList.cpp
+│   │   │   ├── Array.js
+│   │   │   ├── LinkedList.js
 │   │   │   └── ... (More data structures)
 │   │   └── algorithms/
-│   │       ├── Sorting.cpp
-│   │       ├── Searching.cpp
+│   │       ├── Sorting.js
+│   │       ├── Searching.js
 │   │       └── ... (More algorithms)
+│   │   └── problems/
+│   │       ├── hackerrank/
+|   |       ├── leetcode/
+│   │       └── ... (and More)
 │   ├── python/             (Subfolder for Python code)
-│   │   ├── ... (Similar structure as C++)
-│   └── ... (More languages, if applicable)
-├── problems/
-│   ├── solved/
-│   │   ├── two_sum.cpp     (Solved problem in C++)
-│   │   ├── reverse_string.py (Solved problem in Python)
-│   │   └── ...
-│   └── unsolved/
-│       ├── longest_substring.cpp (Unsolved problem in C++)
-│       └── ...
-└── notes/                 (Optional, for textual notes)
-    ├── data_structures.md
-    └── algorithms.md
+│   │   ├── ... (Similar structure as js)
+│   └── ... (More languages, if/when applicable)
+├── notes/ 
+|   ├── data_structures.md
+|   ├── algorithms.md
+|   └── problem_solving.md
+└── resources/ 
+    ├── books/
+    ├── tutorials/
+    └── websites.md
 ```
