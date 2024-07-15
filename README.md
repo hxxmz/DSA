@@ -115,21 +115,21 @@ dsa/
 ├── .gitignore            
 ├── CONTRIBUTORS.md       (list of contributors)
 ├── languages/
-│   ├── js/               
+│   ├── python/               
 │   │   ├── data_structures/
-│   │   │   ├── Array.js
-│   │   │   ├── LinkedList.js
+│   │   │   ├── Array.py
+│   │   │   ├── LinkedList.py
 │   │   │   └── ... (More data structures)
 │   │   └── algorithms/
-│   │       ├── Sorting.js
-│   │       ├── Searching.js
+│   │       ├── Sorting.py
+│   │       ├── Searching.py
 │   │       └── ... (More algorithms)
 │   │   └── problems/
 │   │       ├── hackerrank/
 |   |       ├── leetcode/
 │   │       └── ... (and More)
-│   ├── python/             (Subfolder for Python code)
-│   │   ├── ... (Similar structure as js)
+│   ├── js/             (Subfolder for Python code)
+│   │   ├── ... (Similar structure as python)
 │   └── ... (More languages, if/when applicable)
 ├── notes/ 
 |   ├── data_structures.md
