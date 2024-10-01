@@ -133,7 +133,7 @@ dsa/
 |   |       ├── ...
 │   │       └── ... (and More)
 │   ├── js/             (Subfolder for Python code)
-│   │   ├── ... (Similar structure as python)
+│   │   └── ... (Similar structure as python)
 │   └── ... (More languages, if/when applicable)
 ├── notes/ 
 |   ├── data_structures.md
