@@ -33,9 +33,9 @@ DSA/
 │   │   │   ├── LinkedListOperations.java
 │   │   │   ├── ...
 │   │   ├── C++/
-│   │       ├── linked_list_intro.cpp
-│   │       ├── linked_list_operations.cpp
-│   │       ├── ...
+│   │   │   ├── linked_list_intro.cpp
+│   │   │   ├── linked_list_operations.cpp
+│   │   │   ├── ...
 │   │   └── ...
 │   ├── Stacks/
 │   ├── Queues/
@@ -55,9 +55,9 @@ DSA/
 │   │   │   ├── MergeSort.java
 │   │   │   ├── ...
 │   │   ├── C++/
-│   │       ├── bubble_sort.cpp
-│   │       ├── merge_sort.cpp
-│   │       ├── ...
+│   │   │   ├── bubble_sort.cpp
+│   │   │   ├── merge_sort.cpp
+│   │   │   ├── ...
 │   │   └── ...
 │   ├── Searching/
 │   │   ├── Binary_Search/
@@ -82,10 +82,10 @@ DSA/
 │   │   │   ├── C++/
 │   │   │   ├── ...
 │   │   ├── Hard/
-│   │       ├── Python/
-│   │       ├── Java/
-│   │       ├── C++/
-│   │       ├── ...
+│   │   │   ├── Python/
+│   │   │   ├── Java/
+│   │   │   ├── C++/
+│   │   │   ├── ...
 │   ├── HackerRank/
 │   │   ├── ...
 │   ├── CodeForces/
@@ -120,13 +120,17 @@ dsa/
 │   │   │   ├── Array.py
 │   │   │   ├── LinkedList.py
 │   │   │   └── ... (More data structures)
-│   │   └── algorithms/
-│   │       ├── Sorting.py
-│   │       ├── Searching.py
-│   │       └── ... (More algorithms)
-│   │   └── problems/
-│   │       ├── hackerrank/
-|   |       ├── leetcode/
+│   │   ├── algorithms/
+│   │   │   ├── Sorting.py
+│   │   │   ├── Searching.py
+│   │   │   └── ... (More algorithms)
+│   │   ├── problems/
+│   │   │   ├── hackerrank/
+|   |   │   ├── leetcode/
+│   │   │   └── ... (and More)
+│   │   └── patterns/
+│   │       ├── sliding_window/
+|   |       ├── ...
 │   │       └── ... (and More)
 │   ├── js/             (Subfolder for Python code)
 │   │   ├── ... (Similar structure as python)
