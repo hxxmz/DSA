@@ -2,19 +2,16 @@ def longestCommonPrefix(strs) -> str:
 
     if len(strs) == 0: return ""
 
-    shortest_word = strs[0]
-
+    resultant_prefix = strs[0] # initially, it is the shortest word
     for word in strs:
-        if len(word) < len(shortest_word):
-            shortest_word = word
-    
-    resultant_prefix = shortest_word
+        if len(word) < len(resultant_prefix):
+            resultant_prefix = word
 
     for word in strs:
         current_prefix = ""
-        
-        for i in range(len(shortest_word)):
-            if word[i] == shortest_word[i]:
+
+        for i in range(len(resultant_prefix)):
+            if word[i] == resultant_prefix[i]:
                 current_prefix += word[i]
                 continue
             break
