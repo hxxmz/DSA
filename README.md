@@ -18,10 +18,10 @@ dsa/
     └── sorting
     │   └── file.txt
 ├── data_structures
+    ├── data_structures.md
     ├── arrays
     │   ├── array.py
     │   └── arrays.md
-    ├── data_structures.md
     ├── graphs
     │   └── graph.py
     ├── hash_tables
@@ -63,8 +63,8 @@ dsa/
     └── problem_solving.md
 └── resources
     ├── books
-        └── file.txt
+    │   └── file.txt
     ├── tutorials
-        └── file.txt
+    │   └── file.txt
     └── websites.md
 ```
