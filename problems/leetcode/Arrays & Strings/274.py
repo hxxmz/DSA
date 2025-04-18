@@ -4,13 +4,16 @@ def hIndex(citations) -> int:
     citations = citations[::-1] # reverse
 
     i = 0
-    while citations[i] > i+1:
+    while i < len(citations) and citations[i] >= i + 1:
         i += 1
 
-    return citations[i]
+    return i
 
 print(hIndex(citations = [3,0,6,1,5]))
-print(hIndex(citations = [1,3,1]))
+print(hIndex(citations = [1,3,1])) # 1
+# edge cases
+print(hIndex([100, 99, 98, 97, 96, 95, 94, 93, 92, 91])) # 10
+print(hIndex([0, 0, 0, 0])) # 0
 
 """
 Test cases:
