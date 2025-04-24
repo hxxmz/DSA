@@ -23,7 +23,7 @@ def numJewelsInStones(jewels: str, stones: str) -> int:
 def numJewelsInStonesTwo(jewels: str, stones: str) -> int: 
 
     # Time: O(m + n)
-    # 
+    # Space: O(1)
 
     jewel_set = set(jewels) # O(m) time and space
     

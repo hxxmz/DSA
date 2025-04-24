@@ -1,6 +1,8 @@
 # 217. Contains Duplicate
 
 def containsDuplicate(nums) -> bool:
+    # Time: O(n)
+    # Space: O(n)
     return len(set(nums)) != len(nums)
 
 print(containsDuplicate(nums = [1,2,3,1]))
