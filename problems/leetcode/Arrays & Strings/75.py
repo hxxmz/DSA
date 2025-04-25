@@ -18,7 +18,7 @@ def sortColors(nums) -> None:
 
     print(nums)
 
-def sortColorsDNF(nums) -> None:
+def DutchNationalFlagAlgorithm(nums) -> None:
     """
     Do not return anything, modify nums in-place instead.
     """
@@ -41,5 +41,5 @@ def sortColorsDNF(nums) -> None:
 sortColors(nums = [2,0,2,1,1,0])
 sortColors(nums = [2,0,1])
 
-sortColorsDNF(nums = [2,0,2,1,1,0])
-sortColorsDNF(nums = [2,0,1])
+DutchNationalFlagAlgorithm(nums = [2,0,2,1,1,0])
+DutchNationalFlagAlgorithm(nums = [2,0,1])
