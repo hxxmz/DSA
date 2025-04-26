@@ -2,8 +2,8 @@
 import re
 
 def isPalindrome(s: str) -> bool:
-    
-    s = re.sub(r'[^a-zA-Z]', '', s).lower()
+
+    s = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
 
     if len(s) == 0:
        return True
