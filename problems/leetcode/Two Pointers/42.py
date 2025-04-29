@@ -1,78 +1,101 @@
-# 42. Trapping Rain Water
 from typing import List
 
-def trap(height: List[int]) -> int:
-    # prefix-suffix approach
-    # =======================
-    # Time: O(n)
-    # Space: O(n)
-    # =======================
-    # calculate prefix and suffix max values
-    # in other words max left and right values to the index
-    # in the end, iterate the array and on any index do the following:
-    # compare max left & right and pick min of those, subtract block height
-    # add it in accumulator
-    # ignore negative results, can use max with 0 to ignore negative
-    
-    length = len(height)
+# 42. Trapping Rain Water
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        # prefix-suffix approach
+        # =======================
+        # Time: O(n)
+        # Space: O(n)
+        # =======================
+        # calculate prefix and suffix max values
+        # in other words max left and right values to the index
+        # in the end, iterate the array and on any index do the following:
+        # compare max left & right and pick min of those, subtract block height
+        # add it in accumulator
+        # ignore negative results, can use max with 0 to ignore negative
+        
+        length = len(height)
 
-    prefix_max = [0] * length
-    max_seen = 0
-    for i in range(length):
-        prefix_max[i] = max_seen
-        max_seen = max(height[i], max_seen)
+        prefix_max = [0] * length
+        max_seen = 0
+        for i in range(length):
+            prefix_max[i] = max_seen
+            max_seen = max(height[i], max_seen)
 
-    suffix_max = [0] * length
-    max_seen = 0
-    for i in range(length-1, -1, -1):
-        suffix_max[i] = max_seen
-        max_seen = max(height[i], max_seen)
+        suffix_max = [0] * length
+        max_seen = 0
+        for i in range(length-1, -1, -1):
+            suffix_max[i] = max_seen
+            max_seen = max(height[i], max_seen)
 
-    accumulator = 0
-    for i in range(length):
-        trapped = min(prefix_max[i], suffix_max[i]) - height[i]
-        accumulator += max(trapped, 0)
+        accumulator = 0
+        for i in range(length):
+            trapped = min(prefix_max[i], suffix_max[i]) - height[i]
+            accumulator += max(trapped, 0)
 
-    return accumulator
+        return accumulator
 
-def trap_opt(height: List[int]) -> int:
-    # prefix-suffix (optimized)
-    # two pointer approach
-    # =======================
-    # Time: O(n)
-    # Space: O(1)
-    # =======================
-    # we begin with max_seen (peaks) of each side as 0
-    # we move until the pointers pass each other, ensuring all blocks very checked
-    # for pointer movements; the one that saw the smaller peak moves,
-    # in case of similarity, the right one moves
-    # the pointer each side only keeps the memory of the peak they saw; 
-    # on every move, we check the current block_height to the max the pointer has seen, we keep the max as peak.
-    # if at the given point the ground is lower than the peak, you can trap water;
-    # trap = max_seen - current_height
-    # we add the trapped amount to the accumulator everytime we trap the water.
+    def trap_opt(self, height: List[int]) -> int:
+        # prefix-suffix (optimized)
+        # two pointer approach
+        # =======================
+        # Time: O(n)
+        # Space: O(1)
+        # =======================
+        # we begin with max_seen (peaks) of each side as 0
+        # we move until the pointers pass each other, ensuring all blocks very checked
+        # for pointer movements; the one that saw the smaller peak moves,
+        # in case of similarity, the right one moves
+        # the pointer each side only keeps the memory of the peak they saw; 
+        # on every move, we check the current block_height to the max the pointer has seen, we keep the max as peak.
+        # if at the given point the ground is lower than the peak, you can trap water;
+        # trap = max_seen - current_height
+        # we add the trapped amount to the accumulator everytime we trap the water.
 
-    length = len(height)
-    left_max, right_max = 0
-    l, r = 0, length - 1
-    accumulator = 0
-    while l <= r:
-        if left_max < right_max:
-            if height[l] < left_max:
-                accumulator += (left_max - height[l])
-            left_max = max(left_max, height[l])
-            l += 1
-        else:
-            if height[r] < right_max:
-                accumulator += (right_max - height[r])
-            right_max = max(right_max, height[r])
-            r -= 1
-    return accumulator
+        length = len(height)
 
-print(trap(height = [0,1,0,2,1,0,1,3,2,1,2,1]))
-print(trap(height = [4,2,0,3,2,5]))
-print(trap_opt(height = [0,1,0,2,1,0,1,3,2,1,2,1]))
-print(trap_opt(height = [4,2,0,3,2,5]))
+        left_max, right_max = 0, 0
+        l, r = 0, length - 1
+        accumulator = 0
+        while l <= r:
+
+            if left_max < right_max:
+                if height[l] < left_max:
+                    accumulator += (left_max - height[l])
+
+                left_max = max(left_max, height[l])
+                l += 1
+
+            else:
+                if height[r] < right_max:
+                    accumulator += (right_max - height[r])
+
+                right_max = max(right_max, height[r])
+                r -= 1
+        return accumulator
+
+# Test function
+def test():
+    sol = Solution()
+
+    test_cases = [
+        ([0,1,0,2,1,0,1,3,2,1,2,1], 6),
+        ([4,2,0,3,2,5], 9),
+        ([1,0,2,1,0,1,3], 5),
+        ([5,4,1,2], 1),
+        ([2,0,2], 2),
+        ([3,0,0,2,0,4], 10),
+    ]
+
+    for i, (height, expected) in enumerate(test_cases):
+        res1 = sol.trap(height)
+        res2 = sol.trap_opt(height)
+        print(f"Test case {i+1} [Prefix-Suffix]: {'✅' if res1 == expected else '❌'} | Output: {res1} | Expected: {expected}")
+        print(f"Test case {i+1} [Two-Pointer   ]: {'✅' if res2 == expected else '❌'} | Output: {res2} | Expected: {expected}")
+
+if __name__ == "__main__":
+    test()
 
 """
 Test cases:
