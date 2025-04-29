@@ -2,12 +2,37 @@
 from typing import List
 
 def trap(height: List[int]) -> int:
+    # prefix-suffix approach
+    # Time: O(n)
+    # Space: O(n)
+
     # calculate prefix and suffix max values
     # in other words max left and right values to the index
+    # in the end, iterate the array and on any index do the following:
     # compare max left & right and pick min of those, subtract block height
     # add it in accumulator
-    # ignore negative results, can use max with 0 to ignore negative 
-    pass
+    # ignore negative results, can use max with 0 to ignore negative
+    
+    length = len(height)
+
+    prefix_max = [0] * length
+    max_seen = 0
+    for i in range(length):
+        prefix_max[i] = max_seen
+        max_seen = max(height[i], max_seen)
+
+    suffix_max = [0] * length
+    max_seen = 0
+    for i in range(length-1, -1, -1):
+        suffix_max[i] = max_seen
+        max_seen = max(height[i], max_seen)
+
+    accumulator = 0
+    for i in range(length):
+        trapped = min(prefix_max[i], suffix_max[i]) - height[i]
+        accumulator += max(trapped, 0)
+
+    return accumulator
 
 print(trap(height = [0,1,0,2,1,0,1,3,2,1,2,1]))
 print(trap(height = [4,2,0,3,2,5]))
