@@ -1,36 +1,35 @@
-def removeDuplicates(nums) -> int: # dry approach
-    l = 0
-    r = 1
+from typing import List
 
-    while r < len(nums):
-        if nums[l] != nums[r]:
-            l += 1
-            nums[l] = nums[r]
+# 26. Remove Duplicates from Sorted Array
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int: # dry approach
+        l = 0
+        r = 1
 
-        nums[r] = "_"
-        r += 1
+        while r < len(nums):
+            if nums[l] != nums[r]:
+                l += 1
+                nums[l] = nums[r]
 
-    print(nums)
-    return l+1
-
-def removeDuplicatesTwo(nums) -> int: # first approach
-    l = 0
-    r = 1
-
-    while r < len(nums):
-        if nums[l] == nums[r]:
             nums[r] = "_"
             r += 1
-            continue
-        l += 1
-        nums[l] = nums[r]
-        nums[r] = "_"
-        r += 1
 
-    print(nums)
-    return l+1
+        print(nums)
+        return l+1
 
+# Test function
+def test():
+    sol = Solution()
 
-print(removeDuplicates([1,1,2]))
-print(removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
-print(removeDuplicates([]))
+    test_cases = [
+        ([1, 1, 2], 2),
+        ([0, 0, 1, 1, 1, 2, 2, 3, 3, 4], 5),
+    ]
+
+    for i, (nums, expected) in enumerate(test_cases):
+        result = sol.removeDuplicates(nums)
+        print(f"Test case {i + 1}:")
+        print(f"  Output: {result} | Expected: {expected} {'✅' if result == expected else '❌'}")
+
+if __name__ == "__main__":
+    test()
