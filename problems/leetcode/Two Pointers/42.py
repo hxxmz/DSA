@@ -3,9 +3,10 @@ from typing import List
 
 def trap(height: List[int]) -> int:
     # prefix-suffix approach
+    # =======================
     # Time: O(n)
     # Space: O(n)
-
+    # =======================
     # calculate prefix and suffix max values
     # in other words max left and right values to the index
     # in the end, iterate the array and on any index do the following:
@@ -34,8 +35,44 @@ def trap(height: List[int]) -> int:
 
     return accumulator
 
+def trap_opt(height: List[int]) -> int:
+    # prefix-suffix (optimized)
+    # two pointer approach
+    # =======================
+    # Time: O(n)
+    # Space: O(1)
+    # =======================
+    # we begin with max_seen (peaks) of each side as 0
+    # we move until the pointers pass each other, ensuring all blocks very checked
+    # for pointer movements; the one that saw the smaller peak moves,
+    # in case of similarity, the right one moves
+    # the pointer each side only keeps the memory of the peak they saw; 
+    # on every move, we check the current block_height to the max the pointer has seen, we keep the max as peak.
+    # if at the given point the ground is lower than the peak, you can trap water;
+    # trap = max_seen - current_height
+    # we add the trapped amount to the accumulator everytime we trap the water.
+
+    length = len(height)
+    left_max, right_max = 0
+    l, r = 0, length - 1
+    accumulator = 0
+    while l <= r:
+        if left_max < right_max:
+            if height[l] < left_max:
+                accumulator += (left_max - height[l])
+            left_max = max(left_max, height[l])
+            l += 1
+        else:
+            if height[r] < right_max:
+                accumulator += (right_max - height[r])
+            right_max = max(right_max, height[r])
+            r -= 1
+    return accumulator
+
 print(trap(height = [0,1,0,2,1,0,1,3,2,1,2,1]))
 print(trap(height = [4,2,0,3,2,5]))
+print(trap_opt(height = [0,1,0,2,1,0,1,3,2,1,2,1]))
+print(trap_opt(height = [4,2,0,3,2,5]))
 
 """
 Test cases:
