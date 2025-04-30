@@ -8,8 +8,8 @@ class Solution:
         # then i stacked up indices and moved backwards until i realized;
         # we move forward checking the stack, if it is empty, push the day/index and move ahead.
         # if the stack is not empty, i first check if the current index temperature > stack top temperature,
-        # you keep going backwards settling every day that this temperature is warmer from.
-        # you append the index of this temperature and move ahead.
+        # i keep going backwards settling every day that the current index temperature is warmer from.
+        # i append the index of the current temperature and move ahead.
         # all of the temperatures that didn't see a warmer day in the stack, retain their intialized 0.
 
         length = len(temperatures)
