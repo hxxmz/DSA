@@ -100,7 +100,7 @@ class SinglyLinkedList:
             count += 1
             curr = curr.next
         return count
-    
+
     def print_list(self):
         curr = self.head
         items = []
@@ -109,12 +109,13 @@ class SinglyLinkedList:
             curr = curr.next
         print(" -> ".join(items))
 
-# Linked list operations
-ll = SinglyLinkedList(5)
-ll.append(2)
-ll.append(1)
-ll.append(10)
-ll.append(17)
-ll.print_list()
-print(ll.search(17))
-print(ll.search(18))
+if __name__ == "__main__":
+    # Linked list operations
+    ll = SinglyLinkedList(5)
+    ll.append(2)
+    ll.append(1)
+    ll.append(10)
+    ll.append(17)
+    ll.print_list()
+    print(ll.search(17))
+    print(ll.search(18))
