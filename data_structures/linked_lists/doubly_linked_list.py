@@ -26,21 +26,54 @@ class DoublyLinkedList:
         
         :return: True if the list is empty, otherwise False.
         """
-        pass
+        return self.head is None
     
     def get_length(self):
         """
-        Gets the number of nodes in the list.
+        Gets the number of nodes in the list by traversing through head or the tail.
+                                    OR
+        Calculates the number of nodes present in the doubly linked list.
         
-        :return: The length of the list.
+        Traverses the list from both the head and tail, counting the nodes until 
+        the two pointers meet.  
+
+        :return: The length of the list OR The total count of nodes in the list.
         """
-        pass
+        if self.is_empty():
+            return 0
+
+        # Initialize two pointers, one from the head and one from the tail
+        head_ptr = self.head
+        tail_ptr = self.tail
+        count = 0
+
+        # Traverse from both ends towards the center
+        while head_ptr != tail_ptr and head_ptr and tail_ptr:
+            count += 1
+            head_ptr = head_ptr.next
+            tail_ptr = tail_ptr.next
+        
+        # If both pointers meet at the same node (odd number of nodes)
+        if head_ptr == tail_ptr:
+            count += 1
+
+        return count
 
     def print_list(self):
         """
         Prints the nodes in the list from head to tail.
         """
-        pass
+        if self.is_empty():
+            print("List is empty.")
+            return
+
+        curr = self.head
+        items = []
+        # Traverse through the list, collecting the values of each node
+        while curr:
+            items.append(str(curr.data))
+            curr = curr.next
+        print(" <-> ".join(items))
 
     def print_reverse(self):
         """
