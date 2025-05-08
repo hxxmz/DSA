@@ -8,6 +8,7 @@ class DoublyNode:
         return str(self.value)
 
 class DoublyLinkedList:
+    # ========================== Initialization ==========================
     def __init__(self, data=None):
         """
         Initializes the doubly linked list with an optional starting node value.
@@ -18,6 +19,36 @@ class DoublyLinkedList:
         self.head = new_node
         self.tail = new_node
 
+    # ========================= Basic Operations ==========================
+    def is_empty(self):
+        """
+        Checks whether the doubly linked list is empty.
+        
+        :return: True if the list is empty, otherwise False.
+        """
+        pass
+    
+    def get_length(self):
+        """
+        Gets the number of nodes in the list.
+        
+        :return: The length of the list.
+        """
+        pass
+
+    def print_list(self):
+        """
+        Prints the nodes in the list from head to tail.
+        """
+        pass
+
+    def print_reverse(self):
+        """
+        Prints the nodes in the list from tail to head.
+        """
+        pass
+
+    # ========================= Insert Operations ==========================
     def prepend(self, data):
         """
         Prepends a new node with the given data at the beginning of the list.
@@ -72,14 +103,6 @@ class DoublyLinkedList:
         print(f"Appended node with value '{data}' to the list.")
         return True
 
-    def is_empty(self):
-        """
-        Checks whether the doubly linked list is empty.
-        
-        :return: True if the list is empty, otherwise False.
-        """
-        pass
-
     def insert_after(self, prev_value, data):
         """
         Inserts a new node with the given data after the node with the specified value.
@@ -90,8 +113,16 @@ class DoublyLinkedList:
         """
         pass
 
-    # add insert_before
+    def insert_before(self, next_value, data):
+        """
+        Inserts a node before a specified node value.
+        :param next_value: The value of the node to insert before.
+        :param data: The value to insert.
+        :return: True if successful, False if the next node is not found.
+        """
+        pass
 
+    # ========================= Deletion Operations ==========================
     def delete(self, key):
         """
         Deletes the node with the specified key.
@@ -101,6 +132,21 @@ class DoublyLinkedList:
         """
         pass
 
+    def delete_first(self):
+        """
+        Deletes the first node in the list.
+        :return: True if deletion was successful, False if the list is empty.
+        """
+        pass
+
+    def delete_last(self):
+        """
+        Deletes the last node in the list.
+        :return: True if deletion was successful, False if the list is empty.
+        """
+        pass
+
+    # ======================= Search and Edit Operations ======================
     def search(self, key):
         """
         Searches for a node with the specified key.
@@ -129,22 +175,23 @@ class DoublyLinkedList:
         """
         pass
 
-    def get_length(self):
+    # ======================= Utility Operations ======================
+    def clear(self):
         """
-        Gets the number of nodes in the list.
-        
-        :return: The length of the list.
-        """
-        pass
-
-    def print_list(self):
-        """
-        Prints the nodes in the list from head to tail.
+        Clears the entire linked list.
         """
         pass
 
-    def print_reverse(self):
+    def to_list(self):
         """
-        Prints the nodes in the list from tail to head.
+        Converts the linked list to a standard Python list.
+        :return: List of values from head to tail.
+        """
+        pass
+
+    def to_list_reverse(self):
+        """
+        Converts the linked list to a standard Python list in reverse order.
+        :return: List of values from tail to head.
         """
         pass
