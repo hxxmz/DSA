@@ -1,0 +1,2 @@
+# Ignore all __pycache__ folders inside leetcode problems
+problems/leetcode/**/__pycache__/
