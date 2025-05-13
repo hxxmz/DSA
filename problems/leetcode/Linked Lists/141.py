@@ -17,12 +17,11 @@ class Solution:
         slow = head
         fast = head
         while fast.next:
-            slow = slow.next # 2 3 1
-            fast = fast.next.next # 3 2 1 3
+            slow = slow.next
+            fast = fast.next.next
             if slow == fast:
                 return True
         return False
-
 
 # Test Function
 def test():
