@@ -13,23 +13,23 @@ class Solution:
         saved = head
         curr = head.next
         while curr:
-            if saved.val == curr.val:
-                curr = curr.next
-                continue
-            saved.next = curr
-            saved = curr
+            if saved.val != curr.val:
+                saved.next = curr
+                saved = curr
             curr = curr.next
+        saved.next = None
         
+        return head
 
 def test():
     sol = Solution()
 
     test_cases = [
         ([1, 1, 2], [1, 2]),
-        # ([1, 1, 2, 3, 3], [1, 2, 3]),
-        # ([], []),
-        # ([1, 1, 1, 1, 1], [1]),
-        # ([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]),
+        ([1, 1, 2, 3, 3], [1, 2, 3]),
+        ([], []),
+        ([1, 1, 1, 1, 1], [1]),
+        ([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]),
     ]
 
     for i, (input_list, expected) in enumerate(test_cases):
