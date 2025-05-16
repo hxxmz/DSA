@@ -10,8 +10,8 @@ class Solution:
     first_bad_version_stub = None
 
     def firstBadVersion(self, n: int) -> int:
-        l = 0
-        r = n - 1
+        l = 1
+        r = n
 
         while l < r:
             m = (l + r) // 2
