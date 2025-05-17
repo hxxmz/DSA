@@ -16,8 +16,7 @@ class Solution:
                 r = m - 1
             else:
                 l = m + 1
-
-        return nums[l]
+        return nums[r]
 
 # Test Function
 def test():
@@ -28,6 +27,7 @@ def test():
         ([4, 5, 6, 7, 0, 1, 2], 0),       # Rotated, minimum is 0
         ([11, 13, 15, 17], 11),           # Not rotated, minimum is 11
         ([2, 1], 1),                      # Two elements rotated, minimum is 1
+        ([1, 2], 1),                      # Two elements rotated, minimum is 1
         ([1], 1),                         # Single element, minimum is itself
         ([2, 3, 4, 5, 6, 7, 1], 1),       # Rotated, minimum is 1
         ([5, 6, 7, 8, 9, 1, 2, 3, 4], 1), # Rotated, minimum is 1
